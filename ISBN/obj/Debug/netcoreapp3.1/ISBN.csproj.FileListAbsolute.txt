@@ -1,0 +1,16 @@
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\bin\Debug\netcoreapp3.1\ISBN.exe
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\bin\Debug\netcoreapp3.1\ISBN.deps.json
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\bin\Debug\netcoreapp3.1\ISBN.runtimeconfig.json
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\bin\Debug\netcoreapp3.1\ISBN.runtimeconfig.dev.json
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\bin\Debug\netcoreapp3.1\ISBN.dll
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\bin\Debug\netcoreapp3.1\ISBN.pdb
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\obj\Debug\netcoreapp3.1\ISBN.csproj.AssemblyReference.cache
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\obj\Debug\netcoreapp3.1\ISBN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\obj\Debug\netcoreapp3.1\ISBN.AssemblyInfoInputs.cache
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\obj\Debug\netcoreapp3.1\ISBN.AssemblyInfo.cs
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\obj\Debug\netcoreapp3.1\ISBN.csproj.CoreCompileInputs.cache
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\obj\Debug\netcoreapp3.1\ISBN.dll
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\obj\Debug\netcoreapp3.1\ISBN.pdb
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\obj\Debug\netcoreapp3.1\ISBN.genruntimeconfig.cache
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\dev\Desktop\isbn\ISBN\ISBN\obj\Debug\netcoreapp3.1\ISBN.csproj.CopyComplete
