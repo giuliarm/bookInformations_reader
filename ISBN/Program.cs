@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,8 +39,7 @@ namespace ISBN
             {
                 string authors = bookData.Authors.Count > 1 ? string.Join(";", bookData.Authors) : string.Join("", bookData.Authors);
 
-                string rowData = $"{bookData.RowNumber},{bookData.RetrievalType},{bookData.ISBN},{bookData.Title},{bookData.Subtitle},{$"\"{authors}\""},{bookData.NumberOfPages},{$"\"{bookData.PublishDate}\""}";
-                csvContent.AppendLine(rowData);
+                csvContent.AppendLine($"{bookData.RowNumber},{bookData.RetrievalType},{bookData.ISBN},{bookData.Title},{bookData.Subtitle},{$"\"{authors}\""},{bookData.NumberOfPages},{$"\"{bookData.PublishDate}\""}");
             }
 
             return csvContent.ToString();
@@ -51,6 +51,7 @@ namespace ISBN
 
         static async Task Main(string[] args)
         {
+
             Console.WriteLine("Enter the file path: ");
             string filePath = Console.ReadLine();
 
@@ -75,10 +76,12 @@ namespace ISBN
 
             if (response.ToLower() == "y")
             {
+                Console.WriteLine("Enter the destination: ");
+                string returnPath = Console.ReadLine();
 
                 string csvContent = CsvGenerator.GenerateCsv(bookDataList);
 
-                string path = @"C:\users\dev\Downloads\books.csv";
+                string path = Path.Combine(returnPath, "books.csv");
 
                 File.WriteAllText(path, csvContent);
 
@@ -88,46 +91,32 @@ namespace ISBN
 
         }
 
+
+
         public static List<BookData> ReadInputFile(string filePath)
         {
             List<BookData> bookDataList = new List<BookData>();
 
             string[] lines = File.ReadAllLines(filePath);
 
-            using (StreamReader reader = new StreamReader(filePath))
+            int rowNumber = 1;
+            foreach (var line in lines)
             {
-                int rowNumber = 1;
-                foreach (var line in lines)
+                var lin = line.Split(',').ToList();
+
+                lin.ForEach(l =>
                 {
-                    if (line.Contains(','))
+                    BookData bookData = new BookData
                     {
-                        var isbnsSameLine = line.Split(',');
+                        RowNumber = rowNumber,
+                        ISBN = l.Trim()
+                    };
 
-                        foreach (var i in isbnsSameLine)
-                        {
-                            BookData bookData = new BookData
-                            {
-                                RowNumber = rowNumber,
-                                ISBN = i.Trim()
-                            };
-
-                            bookDataList.Add(bookData);
-                        }
-                        rowNumber++;
-                    }
-                    else
-                    {
-                        BookData bookData = new BookData
-                        {
-                            RowNumber = rowNumber,
-                            ISBN = line.Trim()
-                        };
-
-                        bookDataList.Add(bookData);
-                        rowNumber++;
-                    }
-
+                    bookDataList.Add(bookData);
                 }
+                );
+                rowNumber++;
+
 
             }
 
